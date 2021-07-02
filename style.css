@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body,
+h2,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Typography */
+
+body {
+  font-family: "Manrope";
+  font-size: 0.9rem;
+  color: hsl(214, 17%, 51%);
+}
+
+h2 {
+  margin-bottom: 0.875em;
+  font-size: 1.15rem;
+  color: hsl(217, 19%, 35%);
+}
+
+/* Layout */
+
+body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Article */
+
+article {
+  width: min(90%, 360px);
+  border-radius: 15px;
+  margin: 2em 0;
+  overflow: hidden;
+}
+
+.article-header {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.article-body {
+  padding: 2.5em;
+}
+
+.article-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 2.5em;
+}
+
+.article-avatar {
+  width: 46px;
+  border-radius: 50%;
+}
+
+.article-author {
+  margin-left: 1.5em;
+  font-weight: bold;
+  color: hsl(217, 19%, 35%);
+}
+
+.article-author span {
+  display: block;
+  margin-top: 0.3em;
+  font-weight: normal;
+  color: hsl(212, 23%, 69%);
+}
+
+.article-share-button {
+  border-radius: 50%;
+  padding: 0.5em 0.6em;
+  margin-left: auto;
+  z-index: 2;
+}
+
+.article-share-button.active,
+.article-share-button:hover,
+.article-share-button:focus {
+  cursor: pointer;
+  background-color: hsl(214, 17%, 51%);
+}
+
+.article-share-button img {
+  width: 16px;
+}
+
+.article-share-button.active img,
+.article-share-button:hover img,
+.article-share-button:focus img {
+  filter: brightness(0) invert(1);
+}
+
+.article-share {
+  position: relative;
+  display: none;
+  align-items: center;
+  height: 60px;
+  padding: 0 2.5em;
+  margin: -4.2em 0 0 0;
+  background-color: hsl(217, 19%, 35%);
+  color: hsl(212, 23%, 69%);
+  text-transform: uppercase;
+  letter-spacing: 0.5ch;
+}
+
+.article-share.active {
+  display: flex;
+  animation: fade-in 0.5s;
+}
+
+.share-button {
+  margin-left: 1.25em;
+  cursor: pointer;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Desktop Version */
+
+@media (min-width: 900px) {
+  article {
+    display: flex;
+    width: 750px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .article-header {
+    width: 300px;
+    height: 325px;
+    object-position: left;
+  }
+
+  .article-share {
+    position: absolute;
+    width: 250px;
+    border-radius: 10px;
+    margin-top: -9.5em;
+    margin-left: 18.75em;
+  }
+
+  .article-share.active::after {
+    content: "";
+    position: relative;
+    height: 15px;
+    width: 15px;
+    background-color: hsl(217, 19%, 35%);
+    margin: 0 -10em -4em -6.9em;
+    transform: rotate(45deg);
+  }
+}
