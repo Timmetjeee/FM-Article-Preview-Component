@@ -12,7 +12,8 @@ html {
 
 body,
 h2,
-p {
+p,
+a {
   margin: 0;
 }
 
@@ -132,8 +133,12 @@ article {
 }
 
 .share-button {
-  margin-left: 1.25em;
+  margin: 0.25em 0 0 1.25em;
   cursor: pointer;
+}
+
+.share-button img {
+  display: block;
 }
 
 @keyframes fade-in {
